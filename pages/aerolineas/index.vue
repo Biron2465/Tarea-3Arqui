@@ -32,7 +32,7 @@
     <div
       id="snipcart"
       hidden
-      data-api-key="ZDU3NDg5NzEtZGNhZS00NjgxLTkxYzAtNjE5OTA4ZTk0ZWM5NjM4NjY0NTc4NDc3NTk4Mjc5"
+      data-api-key="MWVmZGE4NjEtYTdlNC00ZmIzLTk2MTEtMmIxYzA2MmU1N2EzNjM4NjY3MTE4MjU1ODkxNjE0"
       data-config-modal-style="side"
     ></div>
   </div>
