@@ -1,32 +1,34 @@
 <template>
   <div class="container my-5">
     <Header />
-    <div class="text-center mb-4">
-      <h1 class="display-4">Lista de Fabricantes</h1>
+    <div class="text-center mb-5">
+      <h1 class="display-3 font-weight-bold text-primary">Lista de Fabricantes</h1>
     </div>
     <main>
-      <ul class="list-unstyled row">
-        <li v-for="fabricante in fabricantes" :key="fabricante.nombre" class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body text-center">
-              <h5 class="card-title">{{ fabricante.nombre }}</h5>
-              <nuxt-link :to="`/fabricantes/${fabricante.nombre}`" class="btn btn-link">
+      <div class="row g-4">
+        <li v-for="fabricante in fabricantes" :key="fabricante.nombre" class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-light">
+            <div class="card-body text-center p-4">
+              <h5 class="card-title text-dark font-weight-bold mb-4">{{ fabricante.nombre }}</h5>
+              <nuxt-link :to="`/fabricantes/${fabricante.nombre}`" class="btn btn-info mb-3">
                 Ver detalles
               </nuxt-link>
-              <button
-                class="btn btn-primary snipcart-add-item"
-                :data-item-id="'fabricante-' + fabricante.nombre"
-                :data-item-name="fabricante.nombre"
-                data-item-price="200.00"
-                :data-item-url="`/fabricantes/${fabricante.nombre}`"
-                data-item-description="Descripción del fabricante"
-              >
-                Comprar
-              </button>
+              <div>
+                <button
+                  class="btn btn-warning snipcart-add-item"
+                  :data-item-id="'fabricante-' + fabricante.nombre"
+                  :data-item-name="fabricante.nombre"
+                  data-item-price="200.00"
+                  :data-item-url="`/fabricantes/${fabricante.nombre}`"
+                  data-item-description="Descripción del fabricante"
+                >
+                  Comprar
+                </button>
+              </div>
             </div>
           </div>
         </li>
-      </ul>
+      </div>
     </main>
     <Footer />
     <div
@@ -58,5 +60,46 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Puedes agregar estilos personalizados aquí si lo necesitas */
+/* Espaciado y estilo de las tarjetas */
+li {
+  list-style: none;
+}
+
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-color: #dee2e6;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #343a40;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #343a40;
+  transition: background-color 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
 </style>
