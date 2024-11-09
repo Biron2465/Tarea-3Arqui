@@ -8,7 +8,7 @@
           <NuxtLink class="btn btn-outline-light" to="/fabricantes">Fabricantes</NuxtLink>
           <NuxtLink class="btn btn-outline-light" to="/aerolineas">Aerolíneas</NuxtLink>
         </div>
-        <button class="btn btn-primary snipcart-checkout">
+        <button class="btn snipcart-checkout">
           <span class="snipcart-items-count">0</span> Tiquets in the 🛒
         </button>
       </div>
@@ -20,5 +20,10 @@
 /* Ajusta el espacio y la alineación si es necesario */
 header {
   border-bottom: 1px solid #444;
+}
+
+button {
+  cursor: pointer;
+  background-color: #17a2b8;
 }
 </style>
